@@ -1,13 +1,13 @@
 /*jslint node: true */
 "use strict";
-var conf = require('byteballcore/conf.js');
-var db = require('byteballcore/db.js');
-var storage = require('byteballcore/storage.js');
-var eventBus = require('byteballcore/event_bus.js');
-var mail = require('byteballcore/mail.js');
-var headlessWallet = require('headless-byteball');
-var desktopApp = require('byteballcore/desktop_app.js');
-var objectHash = require('byteballcore/object_hash.js');
+var conf = require('GAEAcore/conf.js');
+var db = require('GAEAcore/db.js');
+var storage = require('GAEAcore/storage.js');
+var eventBus = require('GAEAcore/event_bus.js');
+var mail = require('GAEAcore/mail.js');
+var headlessWallet = require('headless-GAEA');
+var desktopApp = require('GAEAcore/desktop_app.js');
+var objectHash = require('GAEAcore/object_hash.js');
 
 var WITNESSING_COST = 600; // size of typical witnessing unit
 var my_address;
@@ -45,8 +45,8 @@ function witness(onDone){
 		notifyAdminAboutFailedWitnessing(err);
 		setTimeout(onDone, 60000); // pause after error
 	}
-	var network = require('byteballcore/network.js');
-	var composer = require('byteballcore/composer.js');
+	var network = require('GAEAcore/network.js');
+	var composer = require('GAEAcore/composer.js');
 	if (!network.isConnected()){
 		console.log('not connected, skipping');
 		return onDone();
